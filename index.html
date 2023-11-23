@@ -22,7 +22,7 @@
       }
       .hero-scrolli {
         position: absolute;
-        bottom: -20px;
+        bottom: 7vh;
         left: 50%;
         transform: translateX(-50%);
         width: 60px;
@@ -94,6 +94,10 @@
     .wide-col {
       flex: 2;
     }
+    .inverse-color {
+      color: white;
+      background-color: black;
+    }
     </style>
   </head>
   <body>
@@ -110,20 +114,18 @@
                 <li>Equity & profit</li>
                 <li>Possibly huge impact, lives saved</li>
               </ul>
-              <p>Let me convince you :)</p>
-              <p class="small">10 slides, ~2 minutes</p>
-              <div style="height: 10vh"></div>
+              <p class="small">7 slides, ~2 minutes</p>
             </div>
             <div class="col">
-              <img src="imgs/Issues.png" class="float-right phone-wrap" style="height: 30vh;"" />
+              <img src="imgs/figma/Issues.png" class="phone-wrap" style="height: 45vh"/>
             </div>
           </div>
-          <div class="hero-scrolli">
+          <!-- <div class="hero-scrolli">
             <span><i class="fa fa-arrow-down"></i></span>
-          </div>
+          </div> -->
         </section>
 
-        <section>
+        <section data-background-image="imgs/mission_mountain.png" data-background-size="cover" data-background-opacity=".2">
           <h2>Mission</h2>
           <p>Create mobile app to help people drive safer</p>
           <p>Measure acceleration force and capture (low fps) video</p>
@@ -132,7 +134,7 @@
           <p>... while also protecting users privacy</p>
         </section>
 
-        <section>
+        <section data-background-image="imgs/gears.png" data-background-opacity="0.1">
           <h2>Bussiness model</h2>
           <p>Offer the app for free</p>
           <p>Earn money by partnerships with insurance companies (~15% of insurance price)</p>
@@ -140,22 +142,23 @@
           <p>Market research (= LinkedIn cold messaging) shown (mild) interest of the slow-moving Czech insurance companies</p>
         </section>
 
-        <section>
+        <section data-background-image="imgs/chip.png" data-background-opacity="0.1">
           <h2>Technology</h2>
           <dev class="flex">
             <dev class="wide-col">
               <p>I am now working on Android prototype in Kotlin+OpenCV</p>
-              <p>Simple backend on AWS Lambda (Python)</p>
+              <p>Backend on AWS Lambda (Python)</p>
               <p>Later, multi-platform will be needed, have no preference on technology</p>
-              <p>All high-perf low-power so that you don't have to charge phone on short city rides</p>
+              <p>All high-perf, low-power so that you don't have to charge phone on short city rides</p>
             </dev>
             <dev class="col">
-              <img src="imgs/Report.png" class="float-right phone-wrap" style="height: 40vh;"" />
+              <img src="imgs/figma/Report.png" class="phone-wrap" style="height: 45vh"" />
             </dev>
           </dev>
         </section>
 
-        <section>
+        <!-- <section data-background-gradient="radial-gradient(#dd3, #ccc)"> -->
+        <section data-background-image="imgs/candidate.png" data-background-opacity="0.08">
           <h2>You</h2>
           <p>Mobile dev experienced with any technology for cross-platform (Android+iOS)</p>
           <p>Capacity for at least 20 hours weekly with option to become full-time later</p>
@@ -163,8 +166,8 @@
           <p>It's fine to start next week or in 3 months</p>
         </section>
 
-        <section>
-          <h2>Founder: <a href="https://janskoda.cz">Jan Skoda</a></h2>
+        <section data-background-image="imgs/founder.png" data-background-opacity="0.2">
+          <h2>Founder: <a href="https://janskoda.cz">Jan Škoda</a></h2>
           <p></p>
           <p>Mat-fyz AI graduate - computer vision & robot navigation research</p>
           <p>Ex data science team-lead in trading company <br/>
@@ -196,7 +199,7 @@
           </table>
         </section>
 
-        <section>
+        <section data-background-color="black">
           <h2>End <span class="small">Or beginning?</span></h2>
           <p>Add me on <a href="https://www.linkedin.com/in/jan-skoda/" target="_blank">my LinkedIn</a> if interested, I will text you</p>
           <p>or email me on skoda@jskoda.cz</p>
@@ -207,17 +210,29 @@
 
         <section>
           <h2>Competition</h2>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
+          <p>
+          <a href="https://www.joinroot.com/" target="_blank">Root insurance</a> (US): offers mobile app <em>and</em> is insurance company.
+          Their app doesn't monitor many useful metrics though, mostly driving time and acceleration.
+          <!-- $2.5bn valuation in 2021. -->
+          </p>
+          <p>Hardware solutions (acceleration, gps location, velocity measurement) requiring installation in car</p>
+          <p>Usage based insurance (tachometer photos) &ndash; popular</p>
+          <p>Overall: no relevant competition especially in EU</p>
         </section>
 
         <section>
           <h2>A few numbers</h2>
-          <p>EU insurance market: EUR 150 billion. Insurance is usually mandatory.</p>
+          <p>EU insurance market: EUR 150 billion.</p>
           <p>Similar business model "works" in the US, <i>Root Insurance</i> was valued USD 2.5 billion in 2021.</p>
           <p>The apps are still pretty bad though and customers complain. With a decent app and customer base we could be worth CZK 1 billion+ in a few years.</p>
+        </section>
+
+        <section data-background-color="black">
+          <h2>End <span class="small">Or beginning?</span></h2>
+          <p>Add me on <a href="https://www.linkedin.com/in/jan-skoda/" target="_blank">my LinkedIn</a> if interested, I will text you</p>
+          <p>or email me on skoda@jskoda.cz</p>
+          <p>We can then chat on google meet, no commitments</p>
+          <p>I am also happy for feedback or ideas</p>
         </section>
       </div>
     </div>
@@ -234,11 +249,10 @@
       // - https://revealjs.com/config/
       Reveal.initialize({
         hash: true,
-        view: 'scroll',
-        scrollProgress: true,
-        scrollLayout: 'full', // this is the default value, also 'compact' is possible
+        // view: 'scroll',
+        // scrollProgress: true,
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom],
+        plugins: [RevealMarkdown, RevealHighlight, RevealZoom],
       });
     </script>
   </body>
