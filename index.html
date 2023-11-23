@@ -6,20 +6,25 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Safe Driving project</title>
+    <title>Safe Ride project</title>
     <link rel="stylesheet" href="reveal.js/dist/reset.css" />
     <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
     <link rel="stylesheet" href="reveal.js/dist/theme/white.css" id="theme" />
     <!-- Needed for the hero-scrolli element -->
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme" />
+    <!-- <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme" /> -->
     <style>
-      p, ul { text-align: left !important; margin-left: 10px !important; }
+      /* Align text to left instead of reveal-default center */
+      p, ul {
+        text-align: left !important;
+        margin-left: 10px !important;
+      }
       ul {
         display: block !important;
         margin-left: 70px !important;
       }
+      /* Scrolling hint */
       .hero-scrolli {
         position: absolute;
         bottom: 7vh;
@@ -30,81 +35,86 @@
         text-align: center;
         border: 4px solid gray;
         border-radius: 30px;
-    }
-    .hero-scrolli span {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-      font-size: 24px;
-      color: front;
-      animation: scrolli 2s infinite;
-      -webkit-animation: scrolli 2s infinite;
-    }
-    @keyframes scrolli{
-      0%{
+      }
+      .hero-scrolli span {
+        position: absolute;
+        left: 50%;
         top: 0;
-        opacity: 1;
+        transform: translateX(-50%);
+        font-size: 24px;
+        color: front;
+        animation: scrolli 2s infinite;
+        -webkit-animation: scrolli 2s infinite;
       }
-      50%{
-        top: 30%;
-        opacity: .5;
+      @keyframes scrolli{
+        0%{
+          top: 0;
+          opacity: 1;
+        }
+        50%{
+          top: 30%;
+          opacity: .5;
+        }
+        100%{
+          top: 80%;
+          opacity: 0;
+        }
       }
-      100%{
-        top: 80%;
-        opacity: 0;
+      .small {
+        opacity: 0.5;
+        font-size: 60%;
       }
-    }
-    .small {
-      opacity: 0.5;
-      font-size: 60%;
-    }
-    .float-right {
-      float: right;
-      margin: 10px !important;
-    }
-    .phone-wrap {
-      border: 2px solid #555;
-      border-radius: 15px;
-      margin: 10px !important;
-      padding: 5px;
-    }
-    .list-horizontal {
-      margin: 0 !important;
-    }
-    .list-horizontal li {
-      display:inline-block;
-    }
-    .list-horizontal li:before {
-      content: '\00a0\2022\00a0\00a0';
-      opacity: .8;
-      /* content: '+ '; */
-      /* color:#999; */
-      /* color:rgba(0,0,0,0.5); */
-    }
-    /* .list-horizontal li:first-child:before {
-      content: '';
-    } */
-    .flex {
-      display: flex;
-    }
-    .col {
-      flex: 1;
-    }
-    .wide-col {
-      flex: 2;
-    }
-    .inverse-color {
-      color: white;
-      background-color: black;
-    }
+      /* Side image */
+      .float-right {
+        float: right;
+        margin: 10px !important;
+      }
+      /* Phone visualizations */
+      .phone-wrap {
+        border: 2px solid #555;
+        border-radius: 15px;
+        margin: 10px !important;
+        padding: 5px;
+      }
+      /* Horizontal list - now disabled */
+      .list-horizontal {
+        margin: 0 !important;
+      }
+      .list-horizontal li {
+        display:inline-block;
+      }
+      .list-horizontal li:before {
+        content: '\00a0\2022\00a0\00a0';
+        opacity: .8;
+        /* content: '+ '; */
+        /* color:#999; */
+        /* color:rgba(0,0,0,0.5); */
+      }
+      /* .list-horizontal li:first-child:before {
+        content: '';
+      } */
+      /* Two column layout */
+      .flex {
+        display: flex;
+      }
+      .col {
+        flex: 1;
+      }
+      .wide-col {
+        flex: 2;
+      }
+      /* White on black slide */
+      .inverse-color {
+        color: white;
+        background-color: black;
+      }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section>
-          <h2><span style="color:rgba(54, 192, 54, 0.841)">Safe Driving</span> App project</h2>
+          <h2><span style="color:rgba(54, 192, 54, 0.841)">Safe Ride</span> App project</h2>
           <div class="flex">
             <div class="wide-col">
               <p>Info for potential team-mates</p>
@@ -114,7 +124,7 @@
                 <li>Equity & profit</li>
                 <li>Possibly huge impact, lives saved</li>
               </ul>
-              <p class="small">7 slides, ~2 minutes</p>
+              <p class="small">8 slides, ~2 minutes</p>
             </div>
             <div class="col">
               <img src="imgs/figma/Issues.png" class="phone-wrap" style="height: 45vh"/>
@@ -239,10 +249,10 @@
     <!-- TODO Figma android UI? -->
     <!-- TODO No disclosure text, watermark? -->
     <script src="reveal.js/dist/reveal.js"></script>
-    <script src="reveal.js/plugin/notes/notes.js"></script>
-    <script src="reveal.js/plugin/markdown/markdown.js"></script>
-    <script src="reveal.js/plugin/highlight/highlight.js"></script>
-    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+    <!-- <script src="reveal.js/plugin/notes/notes.js"></script> -->
+    <!-- <script src="reveal.js/plugin/markdown/markdown.js"></script> -->
+    <!-- <script src="reveal.js/plugin/highlight/highlight.js"></script> -->
+    <!-- <script src="reveal.js/plugin/zoom/zoom.js"></script> -->
     <script>
       // More info about initialization & config:
       // - https://revealjs.com/initialization/
@@ -252,7 +262,7 @@
         // view: 'scroll',
         // scrollProgress: true,
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealZoom],
+        // plugins: [RevealMarkdown, RevealHighlight, RevealZoom],
       });
     </script>
   </body>
