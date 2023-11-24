@@ -172,9 +172,9 @@
         <section data-background-image="imgs/candidate.png" data-background-opacity="0.08">
           <h2>You</h2>
           <p>Mobile dev experienced with any technology for cross-platform (Android+iOS)</p>
-          <p>Capacity for at least 20 hours weekly with option to become full-time later</p>
+          <p>Capacity for around 20 hours weekly (remote+Prague) with option to become full-time later</p>
           <p>Happy working for tiny startup for combination of fixed salary (on contract) and option to get equity 💰</p>
-          <p>It's fine to start next week or in 3 months</p>
+          <p>Most of the work will start in March &ndash; May next year, but you can join earlier too</p>
         </section>
 
         <section data-background-image="imgs/founder.png" data-background-opacity="0.2">
@@ -216,7 +216,16 @@
           <p>or email me on <em>skoda@jskoda.cz</em></p>
           <p>We can then chat on google meet, no commitments</p>
           <p>I am also happy for feedback or ideas</p>
-          <p class="small">Ok, even more details on the project on two more slides ↓</p>
+          <p class="small">Ok, even more details on the project on two more slides ➤</p>
+          <!-- ↓ -->
+        </section>
+
+        <section>
+          <h2>How we will work</h2>
+          <p>I aim on team of 3 people in the first 6 months</p>
+          <p>We will meet every week at <a href="https://www.h40.cz/art-digital-lab">H40</a> incubator & coworking in Praha Holesovice</p>
+          <p>Hybrid regime preferred, but you can work in coworking or 100% remote too</p>
+          <p>Our main goal for the first year will be Android+iOS MVP, we can pick any technologies we need</p>
         </section>
 
         <section>
@@ -265,6 +274,33 @@
         // Learn about plugins: https://revealjs.com/plugins/
         // plugins: [RevealMarkdown, RevealHighlight, RevealZoom],
       });
-    </script>
+
+      /* Analytics */
+      let loadTime = Math.floor(Date.now() / 1000);
+      function collect(query, beacon = false) {
+        let curTime = Math.floor(Date.now() / 1000);
+        let sinceLoad = curTime - loadTime;
+        if (beacon) {
+          navigator.sendBeacon('https://saferide.tech/st?' + query + '&tdiff=' + sinceLoad);
+        } else {
+          fetch('https://saferide.tech/st?' + query + '&tdiff=' + sinceLoad, {mode: 'no-cors'}).catch(e => console.log('Ping failed ' + e));
+        }
+      }
+      collect('ev=page_load&url='+window.location.href);
+      Reveal.addEventListener('slidechanged', function(event) {
+        // event contents: event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        // ga('send', 'event', 'Slide', 'click', event.currentSlide);
+        collect('ev=slide&slide='+event.indexh);
+      });
+      window.addEventListener('beforeunload', function (event) {
+        collect('ev=page_close', beacon = true);
+      });
+      window.addEventListener('blur', function (event) {
+        collect('ev=window_defocus');
+      });
+      window.addEventListener('focus', function (event) {
+        collect('ev=window_refocus');
+      });
+</script>
   </body>
 </html>
