@@ -133,7 +133,7 @@
           </div> -->
         </section>
 
-        <section>
+        <!-- <section>
           <h2>Technologie</h2>
           <dev class="flex">
             <dev class="wide-col">
@@ -147,7 +147,7 @@
               <img src="imgs/figma/Report.png" class="phone-wrap" />
             </dev>
           </dev>
-        </section>
+        </section> -->
 
         <section>
           <h2>Bussiness model</h2>
@@ -233,7 +233,7 @@
     <!-- TODO Figma android UI? -->
     <!-- TODO No disclosure text, watermark? -->
     <script src="reveal.js/dist/reveal.js"></script>
-    <!-- <script src="reveal.js/plugin/notes/notes.js"></script> -->
+    <script src="reveal.js/plugin/notes/notes.js"></script>
     <!-- <script src="reveal.js/plugin/markdown/markdown.js"></script> -->
     <!-- <script src="reveal.js/plugin/highlight/highlight.js"></script> -->
     <!-- <script src="reveal.js/plugin/zoom/zoom.js"></script> -->
@@ -247,6 +247,8 @@
         // scrollProgress: true,
         // Learn about plugins: https://revealjs.com/plugins/
         // plugins: [RevealMarkdown, RevealHighlight, RevealZoom],
+        totalTime: 10 * 60,
+        plugins: [RevealNotes],
       });
 
       /* Analytics */
