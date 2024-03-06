@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Safe Ride project</title>
+    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="reveal.js/dist/theme/white.css" id="theme" />
+    <!-- Needed for the hero-scrolli element -->
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!-- Theme used for syntax highlighted code -->
+    <!-- <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme" /> -->
+    <style>
+      /* Align text to left instead of reveal-default center */
+      p, ul {
+        text-align: left !important;
+      }
+      /* Scrolling hint */
+      /* .hero-scrolli {
+        position: absolute;
+        bottom: 7vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 80px;
+        text-align: center;
+        border: 4px solid gray;
+        border-radius: 30px;
+      }
+      .hero-scrolli span {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        font-size: 24px;
+        color: front;
+        animation: scrolli 2s infinite;
+        -webkit-animation: scrolli 2s infinite;
+      }
+      @keyframes scrolli{
+        0%{
+          top: 0;
+          opacity: 1;
+        }
+        50%{
+          top: 30%;
+          opacity: .5;
+        }
+        100%{
+          top: 80%;
+          opacity: 0;
+        }
+      } */
+      .small {
+        opacity: 0.5;
+        font-size: 60%;
+      }
+      /* Side image */
+      .float-right {
+        float: right;
+        margin: 10px !important;
+      }
+      /* Phone visualizations */
+      .phone-wrap {
+        border: 2px solid #555;
+        border-radius: 15px;
+        margin: 10px !important;
+        padding: 5px;
+        height: 45vh;
+        background-color: white;
+      }
+      /* Two column layout */
+      .flex {
+        display: flex;
+      }
+      .col {
+        flex: 1;
+      }
+      .wide-col {
+        flex: 2;
+      }
+      /* White on black slide */
+      .inverse-color {
+        color: white;
+        background-color: black;
+      }
+      .green {
+        color: rgba(54, 192, 54, 0.841);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <base target="_blank" />
+        <section>
+          <h2>Kouč bezpečného řízení<br/><span class="green">Safe Ride</span></h2>
+        </section>
+
+        <section>
+          <h2>Problém</h2>
+          <ul>
+            <li>Při nehodách zemře:
+            <br/><span style="font-size: 100%">v ČR ~500 osob ročně<br/>v EU ~20 000</span></li>
+            <li class="fragment">V autoškole se člověk bezpečně řídit nenaučí.</li>
+            <li class="fragment">Problém se nedá vyřešit autonomním řízením, to bude ještě desítky let (ekonomicky) nedostupné většině světové populace.</li>
+            <!-- <li>Podobně jako v oblasti zdraví nebo kriminality, i v automobilitě je možné problémy efektivně řešit prevencí.</li> -->
+          </ul>
+        </section>
+
+        <section>
+          <h2>Aplikace <span class="green">Safe Ride</span></h2>
+          <div class="flex">
+            <div class="wide-col">
+              <p><em>Pomoci řidičům řídit bezpečněji a osvojit si principy defenzivní jízdy.</em></p>
+              <ul class="fragment">
+                <li><span class="green">Co:</span> Feedback na vaše řízení</li>
+                <li><span class="green">Jak:</span> Mobilní aplikace používaná v autě</li>
+                <li><span class="green">Proč:</span> Ochrana životů a zdraví</li>
+              </ul>
+              <!-- <p class="small">8 slides, ~8 minutes</p> -->
+            </div>
+            <div class="col">
+              <img src="imgs/figma/Issues.png" class="phone-wrap"/>
+            </div>
+          </div>
+          <!-- <div class="hero-scrolli">
+            <span><i class="fa fa-arrow-down"></i></span>
+          </div> -->
+        </section>
+
+        <section>
+          <h2>Technologie</h2>
+          <dev class="flex">
+            <dev class="wide-col">
+              <ul>
+                <li>Vstupy: lokace, kamera a akcelerometr</li>
+                <li class="fragment">Obrazovka telefonu by byla vypnutá nebo mohla zobrazovat navigaci</li>
+                <li class="fragment">Nízká spotřeba abyste nemuseli zapojovat mobil do nabíječky při krátkých městských jízdách 🔌</li>
+              </ul>
+            </dev>
+            <dev class="col">
+              <img src="imgs/figma/Report.png" class="phone-wrap" />
+            </dev>
+          </dev>
+        </section>
+
+        <section>
+          <h2>Bussiness model</h2>
+          <ul>
+            <li>Aplikace ke stažení zdarma</li>
+            <li>Tržby ze spolupráce s pojišťovnami<br/>(~15% z pojistné částky 💸)</li>
+            <li class="fragment">Později řidič může sdílet své skóre s pojišťovnou a získat ještě levnější pojištění ➝ win-win</li>
+            <li class="fragment">EU trh pojištění aut: 150 mld Eur ročně</li>
+            <!-- https://www.statista.com/statistics/1062857/motor-insurance-written-premiums-in-europe-by-leading-countries/ -->
+            <li class="fragment">1% podíl na trhu s 15% provizí by znamenalo 250 mil Eur ročně tržeb jen v EU</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Konkurence</h2>
+          <ul>
+            <li><a href="https://www.joinroot.com/">Root insurance</a> (US): nabízí mobilní appku <em>a</em> vlastní pojištění.</li>
+            <li class="fragment">Appka nesleduje moc relevantních metrik, jen zrychlení a brždění. Nenabízí velkou slevu.</li>
+            <!-- $2.5bn valuation in 2021. -->
+            <li class="fragment">Hardwarová řešení (akcelerace, gps lokace, rychlost) vyžadujicí instalaci v autě</li>
+            <li class="fragment">Usage based insurance (např. focení tachometru) &ndash; populární</li>
+            <li class="fragment">Bez podobné konkurence v EU.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Founder: <a href="https://janskoda.cz">Jan Škoda</a></h2>
+          <ul>
+            <li>Mat-fyz AI absolvent - computer vision & robotická navigace 🤖</li>
+            <li class="fragment">Ex data science team-lead ve fin-tech firmě <br/>
+            - Python, high-performance, data-science, pricing modely</li>
+            <li class="fragment">Založil 3 malé firmy (2/3 úspěšné: <a href="https://liquiditylabs.xyz" target="_blank">1</a>, <a href="https://crypto-lake.com">2</a>)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Tým & realizace</h2>
+          <ul>
+            <li>První měsíce: Founder + mobile vývojář Jan Černý</li>
+            <li class="fragment">Rozšíření o dalšího programátora a designéra v druhém půlroce inkubace</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Propagace</h2>
+          <ul>
+            <li>Přes sociální sítě vč. placené reklamy</li>
+            <li class="fragment">Začneme segmentem mladých tehnologických nadšenců & řidičů</li>
+            <li class="fragment">Sociální prospěšnost aplikace nám otevře dveře do časopisů a online médií, zejména v ČR</li>
+            <li class="fragment">Publikování obsahu/videí o bezpečné jízdě, analýzy nehod a statistik</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Financování</h2>
+          <!-- <img src="https://media.tenor.com/1G5Pwp5qf1MAAAAC/you-and-me-thumbs-up.gif" class="float-right" style="height: 20vh;" /> -->
+          <table style="font-size: 80%">
+            <tr>
+              <td>Founder</td>
+              <td>Time, CZK ~1 million</td>
+            </tr>
+            <tr>
+              <td>TI / CzechInvest</td>
+              <td>CZK ~1 million?</td>
+            </tr>
+            <tr>
+              <td>Externí investor</td>
+              <td>V pozdější fázi projektu, potřebný pro rozsáhlejší propagaci nebo expanzi do zahraničí.</td>
+            </tr>
+          </table>
+        </section>
+
+        <section data-background-color="black">
+          <h2>Safe Ride</h2>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/jan-skoda/">LinkedIn</a></li>
+            <li>Email <em>hi@saferide.tech</em></li>
+            <li>Web <a href="https://saferide.tech/">saferide.tech</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <!-- TODO Figma android UI? -->
+    <!-- TODO No disclosure text, watermark? -->
+    <script src="reveal.js/dist/reveal.js"></script>
+    <!-- <script src="reveal.js/plugin/notes/notes.js"></script> -->
+    <!-- <script src="reveal.js/plugin/markdown/markdown.js"></script> -->
+    <!-- <script src="reveal.js/plugin/highlight/highlight.js"></script> -->
+    <!-- <script src="reveal.js/plugin/zoom/zoom.js"></script> -->
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // view: 'scroll',
+        // scrollProgress: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        // plugins: [RevealMarkdown, RevealHighlight, RevealZoom],
+      });
+
+      /* Analytics */
+      let loadTime = Math.floor(Date.now() / 1000);
+      function collect(query, beacon = false) {
+        let curTime = Math.floor(Date.now() / 1000);
+        let sinceLoad = curTime - loadTime;
+        if (beacon) {
+          navigator.sendBeacon('https://saferide.tech/st?' + query + '&tdiff=' + sinceLoad);
+        } else {
+          fetch('https://saferide.tech/st?' + query + '&tdiff=' + sinceLoad, {mode: 'no-cors'}).catch(e => console.log('Ping failed ' + e));
+        }
+      }
+      collect('ev=page_load&url='+window.location.href);
+      Reveal.addEventListener('slidechanged', function(event) {
+        // event contents: event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        // ga('send', 'event', 'Slide', 'click', event.currentSlide);
+        collect('ev=slide&slide='+event.indexh);
+      });
+      window.addEventListener('beforeunload', function (event) {
+        collect('ev=page_close', beacon = true);
+      });
+      window.addEventListener('blur', function (event) {
+        collect('ev=window_defocus');
+      });
+      window.addEventListener('focus', function (event) {
+        collect('ev=window_refocus');
+      });
+</script>
+  </body>
+</html>
