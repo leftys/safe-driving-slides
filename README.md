@@ -1,5 +1,6 @@
 # Safe driving slides
 
+View on [GitHub Pages](https://leftys.github.io/safe-driving-slides/).
 
 ## Infra
 
